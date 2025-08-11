@@ -77,7 +77,7 @@ function addOrder(element){
   newItem.classList.remove('hidden')
   const children = newItem.children[0].children
 
-  let itemSelectedData = parent.id + "-" + itemDetail[0].textContent.split(' ')[1] + "-"
+  let itemSelectedData = parent.id + "--" + itemDetail[0].textContent.split(' ')[1] + "--"
   children[1].textContent = rootParent.dataset['name']
   children[2].textContent = rootParent.dataset['price']
   totalPrice.textContent = parseInt(totalPrice.textContent) + parseInt(rootParent.dataset['price']) + 'k'
@@ -89,7 +89,7 @@ function addOrder(element){
 
 
     newDetail.textContent = rootParent.dataset['extra' + i]
-    itemSelectedData += (rootParent.dataset['extra' + i] + '-')
+    itemSelectedData += (rootParent.dataset['extra' + i] + '--')
 
     newItem.children[0].appendChild(newDetail)
   }
@@ -169,7 +169,7 @@ function makeOrder(){
     allOrderData.push(
       (current.dataset.orderCount)
       + ' ' + (current.children[0].children[1].textContent)
-      + ' ' + (current.id.split('-').slice(2)).join(' ')
+      + ' ' + (current.id.split('--').slice(2)).join(' ')
     )
     allPriceData.push(current.children[0].children[2].textContent)
   }
