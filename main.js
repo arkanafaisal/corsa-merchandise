@@ -1,12 +1,12 @@
 function changeMenuSelected(newSelected, event) {
   oldSelected = document.querySelector(".menu-selected")
   if(oldSelected){
-    oldSelected.classList.remove('border-3', 'border-[#FFC107]', 'menu-selected')
+    oldSelected.classList.remove('border-2', 'border-white', 'menu-selected')
     oldSelected.children[2].style.maxHeight = 0
   }
   if(event.target.tagName !== 'BUTTON' && oldSelected === newSelected){return}
 
-  newSelected.classList.add('border-3', 'border-[#FFC107]', 'menu-selected')
+  newSelected.classList.add('border-2', 'border-white', 'menu-selected')
   const detail = newSelected.children[2]
   detail.style.maxHeight = detail.scrollHeight + "px"
 }
