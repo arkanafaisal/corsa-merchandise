@@ -1,12 +1,12 @@
 function changeMenuSelected(newSelected, event) {
   oldSelected = document.querySelector(".menu-selected")
   if(oldSelected){
-    oldSelected.classList.remove('border-3', 'border-[#FFC107]', 'menu-selected')
+    oldSelected.classList.remove('border-2', 'border-white', 'menu-selected')
     oldSelected.children[2].style.maxHeight = 0
   }
   if(event.target.tagName !== 'BUTTON' && oldSelected === newSelected){return}
 
-  newSelected.classList.add('border-3', 'border-[#FFC107]', 'menu-selected')
+  newSelected.classList.add('border-2', 'border-white', 'menu-selected')
   const detail = newSelected.children[2]
   detail.style.maxHeight = detail.scrollHeight + "px"
 }
@@ -24,7 +24,7 @@ function changePrice(event){
 
     const parentSelfIndex = parseInt(event.target.parentElement.dataset.selfIndex)
     const selfIndex = parseInt(event.target.dataset.selfIndex) 
-    
+
     if(parentSelfIndex === 0){
         menuList.children[0].dataset['extra' + (parentSelfIndex+4)] = event.target.textContent
         if(selfIndex === 0) priceMenu1.dataset.extraPrice1 = false
@@ -58,7 +58,7 @@ function changeExtraSelected(el){
     const parent = el.parentElement
     const oldSelected = parent.querySelector(".selected")
     oldSelected.classList.remove('bg-green-500/50', 'selected')
-    
+
     el.classList.add('bg-green-500/50', 'selected')
 }
 
